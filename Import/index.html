@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Store</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<style>
+    #cart-section {
+        margin-top: 50px;
+        padding: 20px;
+        border: 1px solid #ff3366;
+        border-radius: 10px;
+        background-color: #ff3366;
+    }
+    #cart-items {
+        max-height: 300px;
+        overflow-y: auto;
+        margin-bottom: 20px;
+    }
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+    .cart-item h6 {
+        margin: 0;
+        flex: 1;
+    }
+    .cart-item .item-quantity {
+        width: 60px;
+        text-align: center;
+    }
+    .cart-item .item-remove {
+        color: rgb(66, 217, 255);
+        cursor: pointer;
+    }
+    .cart-total {
+        text-align: right;
+        font-weight: bold;
+    }
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Beauty Store</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+            </ul>
+        </nav>
+        <div class="cart">
+            <i class="fas fa-shopping-cart"></i>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Beauty Store</h2>
+            <p>Your one-stop shop for all your beauty needs</p>
+            <a href="#products" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <div class="product-list">
+            <div class="item">
+                <img src="image/Mixa.jpg" alt="1">
+                <h3>La creme Mixa</h3>
+                <p>Crème fraiche et fondante</p>
+                <p class="price">5000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="La creme Mixa" data-price="5000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Bright.jpg" alt="Foundation">
+                <h3>Bright reveal</h3>
+                <p>Crème hydratante Anti-taches SPF 50</p>
+                <p class="price">7000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Bright reveal" data-price="7000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Garnier.jpg" alt="Mascara">
+                <h3>Garnier 100% Ultra blond</h3>
+                <p>Gelée éclaircissante</p>
+                <p class="price">4000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Garnier 100% Ultra blond" data-price="4000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Cerave.l.jpg" alt="Mascara">
+                <h3>Cerave lait</h3>
+                <p>Cerave lait hydratant</p>
+                <p class="price">9000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Cerave lait" data-price="9000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Luminous.jpg" alt="Mascara">
+                <h3>Nivea luminous</h3>
+                <p>Soin de nuit Anti-taches</p>
+                <p class="price">3000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Nivea luminous" data-price="3000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Mixa.2.jpg" alt="Mascara">
+                <h3>Mixa Eau sensible</h3>
+                <p>Sérum hyalurogel</p>
+                <p class="price">4000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Mixa Eau sensible" data-price="4000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Mixa.3.jpg" alt="Mascara">
+                <h3>Mixa soin hyalurogel</h3>
+                <p>Gel-crème hydratante 24H</p>
+                <p class="price">4000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Mixa soin hyalurogel" data-price="4000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Coconut.jpg" alt="Mascara">
+                <h3>Coconut oil conditioner</h3>
+                <p>Moisture Boost</p>
+                <p class="price">4000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Coconut oil conditioner" data-price="4000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Nivea.2.jpg" alt="Mascara">
+                <h3>Nivea soin peaux normales</h3>
+                <p>Soin de jour apaisant et hydratant 24H</p>
+                <p class="price">5000 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Nivea soin peaux normales" data-price="5000">Ajouter au panier</button>
+            </div>
+            <div class="item">
+                <img src="image/Nivea.jpg" alt="Mascara">
+                <h3>Nivea soin peaux sensibles</h3>
+                <p>Soin de jour apaisant et hydratant 24H</p>
+                <p class="price">5500 CFA</p>
+                <button class="btn btn-primary add-to-cart" data-title="Nivea soin peaux sensibles" data-price="5500">Ajouter au panier</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart-section">
+        <h2>Panier</h2>
+        <div id="cart-items"></div>
+        <p class="cart-total">Total: <span id="cart-total">0</span> franc CFA</p>
+        <a href="#" id="checkout-button" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="24" height="24">
+                <path fill="#00ffcc" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"/>
+            </svg>
+            Passez commande
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Beauty Store. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/scripts.js"></script>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var searchInput = document.getElementById('searchInput');
+        var cartItemsContainer = document.getElementById('cart-items');
+        var cartTotalElement = document.getElementById('cart-total');
+        var checkoutButton = document.getElementById('checkout-button');
+        var cart = [];
+        var total = 0;
+
+        function updateCart() {
+            cartItemsContainer.innerHTML = '';
+            cart.forEach(function(item, index) {
+                var itemElement = document.createElement('div');
+                itemElement.className = 'cart-item';
+                
+                var itemTitle = document.createElement('h6');
+                itemTitle.textContent = item.title;
+                
+                var itemQuantity = document.createElement('input');
+                itemQuantity.type = 'number';
+                itemQuantity.value = item.quantity;
+                itemQuantity.min = '1';
+                itemQuantity.className = 'item-quantity';
+                itemQuantity.addEventListener('change', function() {
+                    item.quantity = parseInt(this.value);
+                    updateTotal();
+                });
+
+                var itemPrice = document.createElement('span');
+                itemPrice.textContent = item.price + ' franc CFA';
+
+                var removeButton = document.createElement('span');
+                removeButton.className = 'item-remove';
+                removeButton.textContent = 'Supprimer';
+                removeButton.addEventListener('click', function() {
+                    cart.splice(index, 1);
+                    updateCart();
+                    updateTotal();
+                });
+
+                itemElement.appendChild(itemTitle);
+                itemElement.appendChild(itemQuantity);
+                itemElement.appendChild(itemPrice);
+                itemElement.appendChild(removeButton);
+                cartItemsContainer.appendChild(itemElement);
+            });
+
+            updateTotal();
+        }
+
+        function updateTotal() {
+            total = cart.reduce(function(sum, item) {
+                return sum + (item.price * item.quantity);
+            }, 0);
+
+            cartTotalElement.textContent = total;
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach(function(button) {
+            button.addEventListener('click', function() {
+                var title = this.getAttribute('data-title');
+                var price = parseInt(this.getAttribute('data-price'));
+                
+                var existingItem = cart.find(function(item) {
+                    return item.title === title;
+                });
+
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ title: title, price: price, quantity: 1 });
+                }
+
+                updateCart();
+            });
+        });
+
+        searchInput.addEventListener('input', function () {
+            var searchText = searchInput.value.toLowerCase();
+            var menuItems = document.querySelectorAll('.featured-products .card.promo');
+
+            menuItems.forEach(function (menuItem) {
+                var productTitle = menuItem.querySelector('h5').textContent.toLowerCase();
+                var isVisible = productTitle.includes(searchText);
+
+                menuItem.style.display = isVisible ? 'block' : 'none';
+            });
+        });
+
+        checkoutButton.addEventListener('click', function() {
+            var email = 'zakifadaa@gmail.com'; // L'adresse email du vendeur
+            var subject = 'Commande';
+            var body = 'Bonjour Amadou,\n\nJe souhaite passer la commande suivante :\n\n';
+
+            cart.forEach(function(item) {
+                body += '- ' + item.title + ' : ' + item.price + ' franc CFA x ' + item.quantity + '\n';
+            });
+
+            body += '\nTotal : ' + total + ' franc CFA\n\nMerci.';
+
+            var mailtoLink = 'mailto:' + email + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+            window.location.href = mailtoLink;
+        });
+    });
+</script>
+</html> 
+</html>
